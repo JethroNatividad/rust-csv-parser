@@ -13,5 +13,10 @@ fn main() {
     let contents =
         std::fs::read_to_string("src/input.csv").expect("Should have been able to read the file");
 
-    println!("{}", contents);
+    // Split newlines
+    // Split commas - lastname, firstname, salary
+
+    contents.split("\n").for_each(|line| println!("{}", line));
+
+    // println!("{}", contents);
 }
