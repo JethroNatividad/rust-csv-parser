@@ -10,5 +10,8 @@
 // Process: make this into a vector of structs
 // Outputs: table
 fn main() {
-    println!("Hello, world!");
+    let contents =
+        std::fs::read_to_string("src/input.csv").expect("Should have been able to read the file");
+
+    println!("{}", contents);
 }
