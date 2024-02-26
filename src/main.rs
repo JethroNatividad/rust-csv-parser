@@ -1,3 +1,4 @@
+use cli_table::{print_stdout, Table, WithTitle};
 // Create a program that reads a csv and outputs a table
 /// Inputs: csv file with:
 // Ling,Mai,55900
@@ -9,6 +10,17 @@
 // Zarnecki,Sabrina,51500
 // Process: make this into a vector of structs
 // Outputs: table
+
+#[derive(Table)]
+struct Employee {
+    #[table(title = "First Name")]
+    first_name: String,
+    #[table(title = "Last Name")]
+    last_name: String,
+    #[table(title = "Salary")]
+    salary: String,
+}
+
 fn main() {
     let contents =
         std::fs::read_to_string("src/input.csv").expect("Should have been able to read the file");
