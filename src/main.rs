@@ -16,7 +16,10 @@ fn main() {
     // Split newlines
     // Split commas - lastname, firstname, salary
 
-    contents.split("\n").for_each(|line| println!("{}", line));
+    contents.split("\n").for_each(|line| {
+        let mut data: Vec<&str> = Vec::new();
+        line.split(",").for_each(|d| data.push(d));
+    });
 
     // println!("{}", contents);
 }
