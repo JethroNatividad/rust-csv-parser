@@ -39,5 +39,6 @@ fn main() {
         })
     });
 
+    assert!(print_stdout(employees.with_title()).is_ok())
     // println!("{}", contents);
 }
